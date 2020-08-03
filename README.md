@@ -22,8 +22,10 @@ CheckIn Tracker ensures that customer information is secured, not susceptible to
 CheckIn Tracker provides an online solution and if needed, makes it easy to send the data to the public health officials. This means that restaurants can be compliant with Government requirements. 
 
 #### CheckIn Tracker Link
+Link to Heroku: https://checkin-tracker.herokuapp.com/
 
 #### GitHub Repository
+Link to GitHub: https://github.com/katrinamarquez/t2a2_checkintracker 
 
 #### Description of CheckIn Tracker
 *Purpose*
@@ -37,6 +39,11 @@ CheckIn Tracker provides an online solution and if needed, makes it easy to send
 *Target Audience*
 
 *Tech Stack*
+The tech stack for CheckIn Tracker is listed below.
+- Ruby 
+- Ruby on Rails
+- HTML
+- CSS 
 
 #### User Stories
 
@@ -73,5 +80,7 @@ As a Customer, I need to be able to:
 
 Tasks and bugs for CheckIn Tracker were managed using Trello. 
 
-
 Link to Trello: https://trello.com/b/cwkOCyWQ/checkin-tracker-katrina-marquez 
+
+Below is an example of how work and bugs were tracked on Trello. The example below is from 3 August 2020. 
+![trello_3august](./resources/trello_3august.png)
