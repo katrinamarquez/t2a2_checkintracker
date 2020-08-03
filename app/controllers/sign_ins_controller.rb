@@ -1,5 +1,6 @@
 class SignInsController < ApplicationController
   before_action :set_sign_in, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /sign_ins
   # GET /sign_ins.json
@@ -14,7 +15,7 @@ class SignInsController < ApplicationController
 
   # GET /sign_ins/new
   def new
-    @sign_in = SignIn.new
+    @sign_in = current_user.sign_ins.build
   end
 
   # GET /sign_ins/1/edit
@@ -24,7 +25,7 @@ class SignInsController < ApplicationController
   # POST /sign_ins
   # POST /sign_ins.json
   def create
-    @sign_in = SignIn.new(sign_in_params)
+    @sign_in = current_user.sign_ins.build(sign_in_params)
 
     respond_to do |format|
       if @sign_in.save

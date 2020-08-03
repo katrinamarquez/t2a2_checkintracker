@@ -1,9 +1,10 @@
 <h2>CheckIn Tracker</h2> 
 
-# Indicates if user is logged in or not. Link to Devise.
 <% if user_signed_in? %>
   <p>Welcome! You are checked in.</p>
 <% else %>
   <p>Please login to check in</p>
 <% end %>
+
 <%= link_to 'restaurants', restaurants_path %> | 
+<%= link_to 'sign_ins', sign_ins_path %> |
