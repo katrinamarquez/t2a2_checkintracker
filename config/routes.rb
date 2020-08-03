@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sign_outs
   resources :sign_ins
   root 'welcome#index'
   devise_for :users # controllers: { sessions: 'users/sessions' }

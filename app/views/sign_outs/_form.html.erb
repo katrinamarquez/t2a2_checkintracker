@@ -1,0 +1,32 @@
+<%= form_with(model: sign_out, local: true) do |form| %>
+  <% if sign_out.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sign_out.errors.count, "error") %> prohibited this sign_out from being saved:</h2>
+
+      <ul>
+        <% sign_out.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_out %>
+    <%= form.date_select :date_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_out %>
+    <%= form.time_select :time_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :out_comments %>
+    <%= form.text_area :out_comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

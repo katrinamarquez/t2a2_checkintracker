@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sign Outs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date out</th>
+      <th>Time out</th>
+      <th>Out comments</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sign_outs.each do |sign_out| %>
+      <tr>
+        <td><%= sign_out.date_out %></td>
+        <td><%= sign_out.time_out %></td>
+        <td><%= sign_out.out_comments %></td>
+        <td><%= sign_out.user.email %></td>
+        <td><%= link_to 'Show', sign_out %></td>
+        <td><%= link_to 'Edit', edit_sign_out_path(sign_out) %></td>
+        <td><%= link_to 'Destroy', sign_out, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sign Out', new_sign_out_path %>
