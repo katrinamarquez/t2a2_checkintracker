@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date in:</strong>
+  <%= @sign_in.date_in %>
+</p>
+
+<p>
+  <strong>Time in:</strong>
+  <%= @sign_in.time_in %>
+</p>
+
+<p>
+  <strong>In comments:</strong>
+  <%= @sign_in.in_comments %>
+</p>
+
+<%= link_to 'Edit', edit_sign_in_path(@sign_in) %> |
+<%= link_to 'Back', sign_ins_path %>

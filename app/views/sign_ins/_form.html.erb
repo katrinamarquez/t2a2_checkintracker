@@ -1,0 +1,32 @@
+<%= form_with(model: sign_in, local: true) do |form| %>
+  <% if sign_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sign_in.errors.count, "error") %> prohibited this sign_in from being saved:</h2>
+
+      <ul>
+        <% sign_in.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_in %>
+    <%= form.date_select :date_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_in %>
+    <%= form.time_select :time_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label :in_comments %>
+    <%= form.text_area :in_comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
