@@ -1,14 +1,14 @@
 <h2>CheckIn Tracker</h2> 
 
 <% if user_signed_in? %>
-  <p>Welcome! You are checked in.</p>
+  <p>Welcome! Click Log In to Sign into the restaurant</p>
 <% else %>
-  <p>Please login to check in</p>
+  <p>Please Log In to sign into the restaurant</p>
 <% end %>
 
 <p>
+<%= link_to 'Log In', new_user_session_path %> |
 <%= link_to 'Log Out', destroy_user_session_path, method: :delete %> |
-<%= link_to 'Log In', new_user_session_path %>
 </p>
 <hr>
 <%= link_to 'Restaurants', restaurants_path %> | 
