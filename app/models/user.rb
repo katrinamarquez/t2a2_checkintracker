@@ -8,13 +8,6 @@ class User < ApplicationRecord
 
   # 'Standard' means person clocking in, 'Restaurant' adds ability to create a restaurant and 'Admin' has access to everyone.
   # 'Admin' will not be allowed to be selected by users. 
-  enum role: [:standard, :restaurant, :admin]
+  enum role: [:customer, :restaurant, :administrator]
 
-  # Default role for users when they sign on is Standard
-  after_initialize do 
-    if self.new_record?
-      self.role ||= :Standard
-    end
-  end
-  
 end
