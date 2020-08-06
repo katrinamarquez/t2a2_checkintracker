@@ -50,21 +50,29 @@ The tech stack for CheckIn Tracker is listed below.
 There are two types of users on CheckIn Tracker.
 
 **Restaurant**
-As a Restaurant, I need to be able to:
-- list as a restaurant that is COVID compliant to users;
-- validate that the data provided is correct; 
-- view a list of customers who visited the business;
-- see the times and dates the customer visited;
-- attach comments to the times for that user;
-- export a file of the customer data to provide public health officals; and
-- update my businesses name and contact details. 
+1. Person signs up under 'Restaurant' user profile.
+2. Restaurant is able to add the following details to profile on CheckIn Tracker. 
+- Name
+- Address
+- Phone
+- Email
+3. Restaurant is listed to customers as a 'sign in' option.
+4. Restaurant can see a list of customers that have checked in at their restaurant.  
 
 **Customer**
-As a Customer, I need to be able to:
-- see a list of restaurants I have visited;
-- register/update my contact details on the app;
-- see a list of COVID compliant restaurants in my area; and 
-- attach comments to my clock in and out times. 
+1. Person signs up under 'Customer' user profile. 
+2. Customer is able to add in their contact details.
+- Name
+- Address
+- Phone
+- Email 
+3. Customer is able to view restaurants avaliable. 
+4. Customer is able to sign in at the restaurant. Details include: 
+- date in;
+- time in; 
+- comments; and 
+- restaurant. 
+5. After visit the customer is able to leave feedback to the restaurant. Attachments included. 
 
 #### Wireframes
 
