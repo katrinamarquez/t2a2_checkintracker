@@ -6,18 +6,18 @@ class Ability
   def initialize(user)
     # Restaurant can create restaurants and user details. 
     if user.role? :restaurant
-      can :manage Restaurant
-      can :read SignIn 
-      can :read Feedback 
-      can :manage User
+      can :manage, Restaurant
+      can :read, SignIn  
+      can :read, Feedback 
+      can :manage, User
     end 
 
     # Customer can view restaurant details and view other functions. 
     if user.role? :customer
-      can :read Restaurant
-      can :manage SignIn
-      can :manage Feedback
-      can :manage User
+      can :read, Restaurant
+      can :manage, SignIn
+      can :manage, Feedback
+      can :manage, User
     end
   end
     # See the wiki for details:
