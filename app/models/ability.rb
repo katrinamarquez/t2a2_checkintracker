@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # user ||= User.new
+
     # # Customer
     # if user.has_role? :customer
     #   can :read, Restaurant 
