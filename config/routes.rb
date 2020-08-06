@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sign_outs
+  resources :feedbacks
   resources :sign_ins
   root 'welcome#index'
   devise_for :users, :controllers => { registrations: 'devise/registrations' }
