@@ -1,3 +1,3 @@
 class Restaurant < ApplicationRecord
-  has_one_attached :pic
-end
+  has_one :pic
+end 

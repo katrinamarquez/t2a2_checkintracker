@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  @sign_ins = SignIn.where(restaurant_id: :id)
   # GET /restaurants
   # GET /restaurants.json
   def index

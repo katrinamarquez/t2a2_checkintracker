@@ -1,22 +1,18 @@
+<h1><%= @restaurant.restaurant_name %></h1>
+<br>
 <p>
-  <strong>Restaurant name:</strong>
-  <%= @restaurant.restaurant_name %>
-</p>
-
-<p>
-  <strong>Restaurant address:</strong>
+  <strong>Address:</strong>
   <%= @restaurant.restaurant_address %>
 </p>
 
 <p>
-  <strong>Restaurant phone:</strong>
+  <strong>Phone:</strong>
   <%= @restaurant.restaurant_phone %>
 </p>
 
 <p>
-  <strong>Restaurant email:</strong>
+  <strong>Email:</strong>
   <%= @restaurant.restaurant_email %>
 </p>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<br>
+<p><%= link_to 'Back', restaurants_path %></p>
