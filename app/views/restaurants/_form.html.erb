@@ -10,32 +10,37 @@
       </ul>
     </div>
   <% end %>
-
+  <br>
+  <p>List your restaurant on CheckIn Tracker to show your business is compliant with contact tracing.</p>
+  <br>
   <div class="field">
-    <%= form.label :restaurant_name %>
+    <i><%= form.label :restaurant_name %></i>
     <%= form.text_field :restaurant_name %>
   </div>
-
+  <br>  
   <div class="field">
-    <%= form.label :restaurant_address %>
+    <i><%= form.label :restaurant_address %></i>
     <%= form.text_area :restaurant_address %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :restaurant_phone %>
+    <i><%= form.label :restaurant_phone %></i>
     <%= form.text_field :restaurant_phone %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.label :restaurant_email %>
+    <i><%= form.label :restaurant_email %></i>
     <%= form.text_field :restaurant_email %>
   </div>
-
-    <div class="field">
-    <%= form.label :pic %>
+  <br>
+  <div class="field">
+    <i><%= form.label :image %></i>
+    <p>Option to upload an image or menu to showcase your restaurant</p>
     <%= form.file_field :pic %>
   </div>
-
+<br>
+<br>
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
