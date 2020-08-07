@@ -1,17 +1,24 @@
-<h2>CheckIn Tracker</h2> 
-
-<% if user_signed_in? %>
-  <p>Welcome! Click Log In to Sign into the restaurant</p>
-<% else %>
-  <p>Please Log In to sign into the restaurant</p>
-<% end %>
-
+<h2>Welcome to CheckIn Tracker</h2> 
+<br>
+<p><i>
+You are currently signed in as <%= current_user.email  %>
+</i></p>
 <p>
-<%= link_to 'Log In', new_user_session_path %> |
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %> |
+<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
 </p>
+<br>
 <hr>
-<%= link_to 'Restaurants', restaurants_path %> | 
-<%= link_to 'Sign In @ Location', sign_ins_path %> |
-<%= link_to 'Feedback', feedbacks_path %> |
-<%= link_to 'Update Contact Details', edit_user_registration_path %> |
+<p><b>Restaurants</b></p>
+  <p><%= link_to 'List your Restaurant', new_restaurant_path %></p>
+  <p><%= link_to 'View List of Restaurants', restaurants_path %></p>
+<br>
+<p><b>Check In @ Restaurant</b></p>
+  <p><%= link_to 'CheckIn', new_sign_in_path %></p>
+  <p><%= link_to 'View all CheckIns', sign_ins_path %></p>
+<br>
+<p><b>Feedback to the Restaurants</b></p>
+  <p><%= link_to 'Feedback Form', new_feedback_path %></p>
+  <p><%= link_to 'View Customer Feedback', feedbacks_path %></p>
+<br>
+<p><b>Account</b></p>
+  <p><%= link_to 'Update Your Contact Details', edit_user_registration_path %></p>
