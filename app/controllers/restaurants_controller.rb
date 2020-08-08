@@ -10,9 +10,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    # Allow program to loop through all sign ins of a restaurant
     @sign_ins = SignIn.where(restaurant_id: params[:id])
   end
-
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
