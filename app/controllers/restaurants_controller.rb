@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
-  @sign_ins = SignIn.where(restaurant_id: :id)
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -11,6 +10,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @sign_ins = SignIn.where(restaurant_id: params[:id])
   end
 
   # GET /restaurants/new

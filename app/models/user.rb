@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :sign_ins
   has_many :feedbacks
-
+  has_many :restaurants 
   # 'Standard' means person clocking in, 'Restaurant' adds ability to create a restaurant and 'Admin' has access to everyone.
   # 'Admin' will not be allowed to be selected by users. 
   enum role: [:customer, :restaurant]
