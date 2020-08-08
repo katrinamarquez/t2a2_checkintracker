@@ -13,17 +13,24 @@
   <br>
   <br>
   <div class="field">
-    <%= form.label :date_in %>
+    <%= form.label :restaurant %>
+      <%= @restaurants.each do |r| %>
+      <%= r.restaurant_name %>
+    <% end %>
+  </div>
+  <br>
+  <div class="field">
+    <%= form.label :date %>
     <%= form.date_select :date_in %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :time_in %>
+    <%= form.label :time %>
     <%= form.time_select :time_in %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :in_comments %>
+    <%= form.label :comments %>
     <%= form.text_area :in_comments %>
   </div>
   <br>

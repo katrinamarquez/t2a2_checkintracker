@@ -16,6 +16,8 @@ class SignInsController < ApplicationController
   # GET /sign_ins/new
   def new
     @sign_in = current_user.sign_ins.build
+    # Display restaurants that are logged onto the app to users
+    @restaurants = Restaurant.all
   end
 
   # GET /sign_ins/1/edit
