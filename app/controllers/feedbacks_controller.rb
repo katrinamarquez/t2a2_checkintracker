@@ -10,21 +10,25 @@ class FeedbacksController < ApplicationController
   # GET /feedbacks/1
   # GET /feedbacks/1.json
   def show
+    @restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /feedbacks/new
   def new
-    @feedback = Feedback.new
+    @feedback = current_user.feedbacks.build
+    @restaurants = Restaurant.all
   end
 
   # GET /feedbacks/1/edit
   def edit
+    @restaurants = Restaurant.all
   end
 
   # POST /feedbacks
   # POST /feedbacks.json
   def create
-    @feedback = Feedback.new(feedback_params)
+    @restaurants = Restaurant.all
+    @feedback = current_user.feedbacks.build(feedback_params)
 
     respond_to do |format|
       if @feedback.save
@@ -69,6 +73,6 @@ class FeedbacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feedback_params
-      params.require(:feedback).permit(:comments)
+      params.require(:feedback).permit(:comments, :user_id, :restaurant_id)
     end
 end
