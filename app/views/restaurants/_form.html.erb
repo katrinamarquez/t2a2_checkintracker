@@ -38,6 +38,8 @@
     <p>Option to upload an image or menu to showcase your restaurant</p>
     <%= form.file_field :pic %>
   </div>
+  <%# Pass current user ID to restaurant created %>
+  <%= form.hidden_field :user_id, :value => current_user.id %>
 <br>
 <br>
 <br>

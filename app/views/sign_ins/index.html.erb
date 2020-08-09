@@ -11,6 +11,7 @@
   <thead>
     <tr>
       <th>Date</th>
+      <th>Restaurant</th>
       <th>Arrival Time</th>
       <th>Comments</th>
       <th>Customer</th> 
@@ -22,6 +23,7 @@
     <% @sign_ins.each do |sign_in| %>
       <tr>
         <td><%= sign_in.date_in %></td>
+        <td><%= sign_in.restaurant_id%></td>
         <td><%= sign_in.time_in %></td>
         <td><%= sign_in.in_comments %></td>
         <td><%= sign_in.user.name %></td>

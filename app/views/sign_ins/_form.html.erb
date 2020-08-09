@@ -15,10 +15,13 @@
   <div class="field">
     <%= form.label :restaurant %>
     <%# Show drop down of restaurant names in restaurants model %>
-    <%# collection_select( :sign_in, :restaurant_id, Restaurant.all, :id, :name, {}, { :multiple => false } ) %>
-   <%# form.collection_select :restaurant, @restaurants.each do |r| %>
+    <%= form.select "restaurant_id", options_from_collection_for_select(@restaurants, "id", "restaurant_name") %>
+    <%# form.select "Restaurants", options_from_collection_for_select(@restaurants, "id", "restaurant_name") %>
+    <%# select "restaurant_name", "restaurant_id", @restaurants %>
+    <%# Old code to display the restaurants %>
+    <%# @restaurants.each do |r| %>
       <%# r.restaurant_name %>
-    <% end %>
+    <%# end %>
   </div>
   <br>
   <div class="field">

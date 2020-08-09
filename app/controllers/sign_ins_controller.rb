@@ -6,27 +6,32 @@ class SignInsController < ApplicationController
   # GET /sign_ins.json
   def index
     @sign_ins = SignIn.all
+    @restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /sign_ins/1
   # GET /sign_ins/1.json
   def show
+    @restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /sign_ins/new
   def new
     @sign_in = current_user.sign_ins.build
     # Display restaurants that are logged onto the app to users
+    # @restaurants = Restaurant.pluck(:restaurant_name, :id)
     @restaurants = Restaurant.all
   end
 
   # GET /sign_ins/1/edit
   def edit
+    @restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # POST /sign_ins
   # POST /sign_ins.json
   def create
+    @restaurants = Restaurant.all
     @sign_in = current_user.sign_ins.build(sign_in_params)
 
     respond_to do |format|
@@ -72,6 +77,6 @@ class SignInsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sign_in_params
-      params.require(:sign_in).permit(:date_in, :time_in, :in_comments)
+      params.require(:sign_in).permit(:date_in, :time_in, :in_comments, :restaurant_id)
     end
 end
