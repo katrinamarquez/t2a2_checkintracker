@@ -23,9 +23,9 @@
         <td><%= feedback.comments %></td>
         <td><%= Restaurant.find(feedback.restaurant_id).restaurant_name %></td>
         <td><%= User.find(feedback.user_id).email %> </td>
-        <td><%= link_to 'Show', feedback %></td>
+        <td><%= link_to 'View', feedback %></td>
         <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
-        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

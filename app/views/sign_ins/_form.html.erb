@@ -11,37 +11,33 @@
     </div>
   <% end %>
   <br>
+  <p>Securely CheckIn to your restaurant location now.</p>
   <br>
   <div class="field">
-    <%= form.label :restaurant %>
+    <i><%= form.label :restaurant %></i>
     <%# Show drop down of restaurant names in restaurants model %>
     <%= form.select "restaurant_id", options_from_collection_for_select(@restaurants, "id", "restaurant_name") %>
-    <%# form.select "Restaurants", options_from_collection_for_select(@restaurants, "id", "restaurant_name") %>
-    <%# select "restaurant_name", "restaurant_id", @restaurants %>
-    <%# Old code to display the restaurants %>
-    <%# @restaurants.each do |r| %>
-      <%# r.restaurant_name %>
-    <%# end %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :date %>
+    <i><%= form.label :date %></i>
     <%= form.date_select :date_in %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :time %>
+    <i><%= form.label :time %></i>
     <%= form.time_select :time_in %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :comments %>
+    <i><%= form.label :comments %></i>
     <%= form.text_area :in_comments %>
   </div>
+  <br>
+  <br>
   <br>
   <div class="actions">
     <%= form.submit %>
   </div>
-  <br>
   <br>
 <% end %>

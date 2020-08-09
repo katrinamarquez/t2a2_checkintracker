@@ -11,27 +11,30 @@
     </div>
   <% end %>
   <br>
+  <p>Our restaurants always want to hear from you.</p>
   <br>
     <div class="field">
-    <%= form.label :restaurant %>
+    <i><%= form.label :restaurant %></i>
     <%# Show drop down of restaurant names in restaurants model %>
     <%= form.select "restaurant_id", options_from_collection_for_select(@restaurants, "id", "restaurant_name") %>
   </div>
+  <br>
   <div class="field">
-    <%= form.label :comments %>
+    <i><%= form.label :comments %></i>
     <%= form.text_area :comments %>
   </div>
   <br>
   <div class="field">
-    <%= form.label :pic %>
+    <i><%= form.label :pic %></i>
     <%= form.file_field :pic %>
   </div>
   <br>
-    <%# Pass current user ID to restaurant created %>
+  <%# Pass current user ID to restaurant created %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
+  <br>
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
-  <br>
   <br>
 <% end %>
