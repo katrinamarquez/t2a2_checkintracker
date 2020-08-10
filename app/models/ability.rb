@@ -8,16 +8,20 @@ class Ability
 
     # Define user abilities
     if user.customer?
-      can :manage, SignIn
-      can :manage, Feedback
+      can [:read, :create], SignIn 
+      can [:update, :destroy], SignIn, :user_id => user.id
+      can [:read, :create], Feedback 
+      can [:update, :destroy], Feedback, :user_id => user.id
       can :read, Restaurant
     elsif user.restaurant?
-      can :manage, Restaurant
+      # can :manage, Restaurant
+      can [:read, :create], Restaurant 
+      can [:update, :destroy], Restaurant, :user_id => user.id 
       can :read, Feedback
       can :read, SignIn
     # MVP does not hide this option to regular users for this version of the app
     elsif user.admin?
-      can :manage, all
+      can :read, all
     else
       # what everyone can do
     end

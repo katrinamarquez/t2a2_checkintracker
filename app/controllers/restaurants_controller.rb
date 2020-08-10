@@ -21,6 +21,8 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
+    @restaurant = Restaurant.find params[:id]
+    authorize! :update, @restaurant
   end
 
   # POST /restaurants
