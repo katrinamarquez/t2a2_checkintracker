@@ -5,14 +5,15 @@ class SignInsController < ApplicationController
   # GET /sign_ins.json
   def index
     @sign_ins = SignIn.all
-    #@restaurants = Restaurant.all
-    @restaurants = Restaurant.pluck(:restaurant_name, :id)
+
+    @restaurants = Restaurant.all
+    #@restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /sign_ins/1
   # GET /sign_ins/1.json
   def show
-    @restaurants = Restaurant.pluck(:restaurant_name, :id)
+    #@restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /sign_ins/new
