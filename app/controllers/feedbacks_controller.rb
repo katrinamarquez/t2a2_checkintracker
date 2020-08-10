@@ -17,11 +17,13 @@ class FeedbacksController < ApplicationController
   def new
     @feedback = current_user.feedbacks.build
     @restaurants = Restaurant.all
+    authorize! :create, @feedback
   end
 
   # GET /feedbacks/1/edit
   def edit
     @restaurants = Restaurant.all
+    authorize! :update, @feedback
   end
 
   # POST /feedbacks
@@ -59,6 +61,7 @@ class FeedbacksController < ApplicationController
   # DELETE /feedbacks/1.json
   def destroy
     @feedback.destroy
+    authorize! :destroy, @feedback
     respond_to do |format|
       format.html { redirect_to feedbacks_url, notice: 'Feedback was successfully destroyed.' }
       format.json { head :no_content }

@@ -23,7 +23,7 @@
     <% @sign_ins.each do |sign_in| %>
       <tr>
         <td><%= sign_in.date_in %></td>
-        <td><%= Restaurant.find(sign_in.restaurant_id).restaurant_name %></td>
+        <td><%= Restaurant.find(sign_in.restaurant_id).restaurant_email %></td>
         <td><%= sign_in.time_in %></td>
         <td><%= sign_in.in_comments %></td>
         <td><%= User.find(sign_in.user_id).email %></td>

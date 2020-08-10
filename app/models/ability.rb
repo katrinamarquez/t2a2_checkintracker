@@ -14,7 +14,6 @@ class Ability
       can [:update, :destroy], Feedback, :user_id => user.id
       can :read, Restaurant
     elsif user.restaurant?
-      # can :manage, Restaurant
       can [:read, :create], Restaurant 
       can [:update, :destroy], Restaurant, :user_id => user.id 
       can :read, Feedback

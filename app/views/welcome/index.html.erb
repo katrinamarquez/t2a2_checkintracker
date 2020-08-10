@@ -10,7 +10,7 @@ You are currently signed in as <%= current_user.email  %>
 <hr>
 <br>
 <p><b>Restaurants</b></p>
-  <% if can? :manage, Restaurant %>
+  <% if can? :create, Restaurant %>
     <p><%= link_to 'List your Restaurant', new_restaurant_path %></p>
   <% end %>
   <p><%= link_to 'View List of Restaurants', restaurants_path %></p>

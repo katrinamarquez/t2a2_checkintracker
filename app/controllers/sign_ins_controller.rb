@@ -21,11 +21,13 @@ class SignInsController < ApplicationController
     # Display restaurants that are logged onto the app to users
     # @restaurants = Restaurant.pluck(:restaurant_name, :id)
     @restaurants = Restaurant.all
+    authorize! :create, @sign_in
   end
 
   # GET /sign_ins/1/edit
   def edit
     @restaurants = Restaurant.pluck(:restaurant_name, :id)
+    authorize! :update, @sign_in
   end
 
   # POST /sign_ins
@@ -63,6 +65,7 @@ class SignInsController < ApplicationController
   # DELETE /sign_ins/1.json
   def destroy
     @sign_in.destroy
+    authorize! :destroy, @sign_in
     respond_to do |format|
       format.html { redirect_to sign_ins_url, notice: 'Sign in was successfully destroyed.' }
       format.json { head :no_content }
