@@ -15,14 +15,14 @@ class RestaurantsController < ApplicationController
   end
   # GET /restaurants/new
   def new
+    authorize! :create, @restaurant, :message => "You do not have authorization to do this action."
     @restaurant = Restaurant.new
-    authorize! :create, @restaurant
   end
 
   # GET /restaurants/1/edit
   def edit
+    authorize! :update, @restaurant, :message => "You do not have authorization to do this action."
     @restaurant = Restaurant.find params[:id]
-    authorize! :update, @restaurant
   end
 
   # POST /restaurants
@@ -58,8 +58,8 @@ class RestaurantsController < ApplicationController
   # DELETE /restaurants/1
   # DELETE /restaurants/1.json
   def destroy
+    authorize! :destroy, @restaurant, :message => "You do not have authorization to do this action."
     @restaurant.destroy
-    authorize! :destroy, @restaurant
     respond_to do |format|
       format.html { redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.' }
       format.json { head :no_content }

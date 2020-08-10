@@ -15,15 +15,15 @@ class FeedbacksController < ApplicationController
 
   # GET /feedbacks/new
   def new
+    authorize! :create, @feedback, :message => "You do not have authorization to do this action."
     @feedback = current_user.feedbacks.build
-    @restaurants = Restaurant.all
-    authorize! :create, @feedback
+    @restaurants = Restaurant.all 
   end
 
   # GET /feedbacks/1/edit
   def edit
+    authorize! :create, @feedback, :message => "You do not have authorization to do this action."
     @restaurants = Restaurant.all
-    authorize! :update, @feedback
   end
 
   # POST /feedbacks
@@ -60,8 +60,8 @@ class FeedbacksController < ApplicationController
   # DELETE /feedbacks/1
   # DELETE /feedbacks/1.json
   def destroy
+    authorize! :update, @feedback, :message => "You do not have authorization to do this action."
     @feedback.destroy
-    authorize! :update, @feedback
     respond_to do |format|
       format.html { redirect_to feedbacks_url, notice: 'Feedback was successfully destroyed.' }
       format.json { head :no_content }
