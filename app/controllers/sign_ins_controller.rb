@@ -1,12 +1,12 @@
 class SignInsController < ApplicationController
   before_action :set_sign_in, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /sign_ins
   # GET /sign_ins.json
   def index
     @sign_ins = SignIn.all
-    @restaurants = Restaurant.all
+    #@restaurants = Restaurant.all
+    @restaurants = Restaurant.pluck(:restaurant_name, :id)
   end
 
   # GET /sign_ins/1
@@ -17,15 +17,15 @@ class SignInsController < ApplicationController
 
   # GET /sign_ins/new
   def new
-    authorize! :create, @sign_in, :message => "You do not have authorization to do this action."
     @sign_in = current_user.sign_ins.build
     @restaurants = Restaurant.all
+    authorize! :create, @sign_in, :message => "You do not have authorization to do this action."
   end
 
   # GET /sign_ins/1/edit
   def edit
-    authorize! :create, @sign_in, :message => "You do not have authorization to do this action."
     @restaurants = Restaurant.pluck(:restaurant_name, :id)
+    authorize! :update, @sign_in, :message => "You do not have authorization to do this action."
   end
 
   # POST /sign_ins
@@ -62,8 +62,8 @@ class SignInsController < ApplicationController
   # DELETE /sign_ins/1
   # DELETE /sign_ins/1.json
   def destroy
-    authorize! :destroy, @sign_in, :message => "You do not have authorization to do this action."
     @sign_in.destroy
+    authorize! :destroy, @sign_in, :message => "You do not have authorization to do this action."
   
     respond_to do |format|
       format.html { redirect_to sign_ins_url, notice: 'Sign in was successfully destroyed.' }
