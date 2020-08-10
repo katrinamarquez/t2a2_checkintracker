@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :sign_ins
   has_many :feedbacks
-  has_many :restaurants 
+  has_many :restaurants
 
-  enum role: {customer: 0, restaurant: 1, admin: 2}
+  enum role: [:customer, :restaurant, :admin]
 
 end
