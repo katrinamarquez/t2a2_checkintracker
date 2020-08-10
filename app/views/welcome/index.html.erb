@@ -16,11 +16,15 @@ You are currently signed in as <%= current_user.email  %>
   <p><%= link_to 'View List of Restaurants', restaurants_path %></p>
 <br>
 <p><b>Check In @ Restaurant</b></p>
-  <p><%= link_to 'CheckIn', new_sign_in_path %></p>
+  <% if can? :create, SignIn %>
+    <p><%= link_to 'CheckIn', new_sign_in_path %></p>
+  <% end %>
   <p><%= link_to 'View all CheckIns', sign_ins_path %></p>
 <br>
 <p><b>Feedback to the Restaurants</b></p>
-  <p><%= link_to 'Feedback Form', new_feedback_path %></p>
+  <% if can? :create, Feedback %>
+    <p><%= link_to 'Feedback Form', new_feedback_path %></p>
+  <% end %>
   <p><%= link_to 'View Customer Feedback', feedbacks_path %></p>
 <br>
 <p><b>Account</b></p>

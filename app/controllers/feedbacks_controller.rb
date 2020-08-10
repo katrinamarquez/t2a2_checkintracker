@@ -61,7 +61,7 @@ class FeedbacksController < ApplicationController
   # DELETE /feedbacks/1.json
   def destroy
     @feedback.destroy
-    authorize! :destroy, @feedback
+    authorize! :update, @feedback
     respond_to do |format|
       format.html { redirect_to feedbacks_url, notice: 'Feedback was successfully destroyed.' }
       format.json { head :no_content }

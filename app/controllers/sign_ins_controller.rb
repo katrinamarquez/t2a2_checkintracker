@@ -6,7 +6,7 @@ class SignInsController < ApplicationController
   # GET /sign_ins.json
   def index
     @sign_ins = SignIn.all
-    @restaurants = Restaurant.pluck(:restaurant_name, :id)
+    @restaurants = Restaurant.all
   end
 
   # GET /sign_ins/1
@@ -18,8 +18,6 @@ class SignInsController < ApplicationController
   # GET /sign_ins/new
   def new
     @sign_in = current_user.sign_ins.build
-    # Display restaurants that are logged onto the app to users
-    # @restaurants = Restaurant.pluck(:restaurant_name, :id)
     @restaurants = Restaurant.all
     authorize! :create, @sign_in
   end
