@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :feedbacks
   has_many :restaurants 
 
+  enum role: {customer: 0, restaurant: 1, admin: 2}
+
 end
