@@ -143,11 +143,12 @@ There are two types of users on CheckIn Tracker.
 **Admin** 
 In future iterations of the app, Admin will be a hidden field on the sign up form and is intended for internal support use at CheckIn Tracker. It is a view only version of the app. 
 
-No intended functionality at the moment for user stories. 
+No intended functionality for user stories at the moment. 
 
 #### Wireframes
 
 #### ERD
+![erd](./docs/erd.png)
 
 #### High-Level Components 
 The CheckIn Tracker provides a safe method of remaining compliant with regulations surrounding restaurant operations in COVID. In some restaurants during the pandemic, an A4 piece of paper is at the front of the restaurnt and can be viewed by customers and people walking by the restaurant. This raises concerns around data safety. Further it provides extends use of the app to customer relationship management through its features. 
