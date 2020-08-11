@@ -62,9 +62,41 @@ Feedback is a form allowing the user to provide feedback to the restaurant. The 
 *Sitemap*
 See file path t2a2_checkintracker/docs/site_map.pdf
 
-![site_map](./docs/site_map.pdf)
+![site_map](./docs/site_map.png)
 
 *Screenshots*
+1. Log in page
+![log_in](./docs/log_in.png)
+
+2. Sign up
+![sign_up](./docs/sign_up.png)
+
+3. Home page after signing in (restaurant users)
+![home](./docs/home.png)
+
+4. Home page after signing in (customer users)
+![home_customer](./docs/home_customer.png)
+
+5. List restaurant (restaurant users)
+![create_restaurant](./docs/create_restaurant.png)
+
+6. View list of restaurants
+![restaurant_list](./docs/restaurant_list.png)
+
+7. Create CheckIn (customer users)
+![create_checkin](./docs/create_checkin.png)
+
+8. View list of restaurants
+![restaurant_list](./docs/restaurant_list.png)
+
+9. Create Feedback (customer users)
+![create_feedback](./docs/create_feedback.png)
+
+10. View list of feedback
+![feedback_list](./docs/feedback_list.png)
+
+11. Edit account details
+![edit_account](./docs/edit_account.png)
 
 *Target Audience*
 There are two target audiences for the CheckIn Tracker. 
@@ -191,9 +223,23 @@ ActiveRecordAssociations of Feedback model:
 - has_one_attached pic
 
 #### Database Relations of CheckIn Tracker
+A user if set up under the role of a 'restaurant' is able to create many restaurants (*has_many*). This is to cover scenarios where one user login has multiple relationships. 
 
+A restaurant can only belong to one user (*belongs_to*). This is to ensure that a user who did not create the resturant cannot edit or delete a restaurant created by another user. All restaurants can view other restaurants listed on the app, in order to be able to view what customers can view on the index. 
+
+A restaurant can upload an image attached to the listing. 
+
+A user can have many sign in's as a user can check into many restaurants on the app (*has_many*). This enables the user to view a list of all their CheckIn's (i.e. where they have been) on the app. The restaurant the user CheckedIn can be viewed on the index page.   
+
+A user can provide many feedbacks to the restaurant (*has_many*). Each feedback is linked to the user ID and restaurant ID ensuring that the correct customer and restaurant user can view the app.   
+
+A user can upload an image attached to the feedback. This includes scenarios where they want to include a picture of the food, reciept, etc. 
 
 #### Schema Design
+
+![schema_one](./docs/schema_one.png)
+
+![schema_two](./docs/schema_two.png)
 
 #### Project Management
 
