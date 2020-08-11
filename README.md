@@ -86,8 +86,8 @@ See file path t2a2_checkintracker/docs/site_map.pdf
 7. Create CheckIn (customer users)
 ![create_checkin](./docs/create_checkin.png)
 
-8. View list of restaurants
-![restaurant_list](./docs/restaurant_list.png)
+8. View list of CheckIn's
+![checkin_list](./docs/checkin_list.png)
 
 9. Create Feedback (customer users)
 ![create_feedback](./docs/create_feedback.png)
@@ -146,6 +146,10 @@ In future iterations of the app, Admin will be a hidden field on the sign up for
 No intended functionality for user stories at the moment. 
 
 #### Wireframes
+
+See document titled wireframe.pdf.
+
+Path: docs/wireframe.pdf
 
 #### ERD
 ![erd](./docs/erd.png)
