@@ -22,7 +22,7 @@ CheckIn Tracker ensures that customer information is secured, not susceptible to
 CheckIn Tracker provides an online solution and if needed, makes it easy to send the data to the public health officials. This means that restaurants can be compliant with Government requirements. 
 
 #### CheckIn Tracker Link
-Link to Heroku:
+Link to Heroku: https://t2a2checkintracker.herokuapp.com/
 
 #### GitHub Repository
 Link to GitHub: https://github.com/katrinamarquez/t2a2_checkintracker 
