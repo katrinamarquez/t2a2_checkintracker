@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: t2a2_checkintracker_production
-  username: t2a2_checkintracker
-  password: <%= ENV['T2A2_CHECKINTRACKER_DATABASE_PASSWORD'] %>
+  database: t<%= ENV['DATABASE_URL'] %>
+  #username: t2a2_checkintracker
+  #password: <%= ENV['T2A2_CHECKINTRACKER_DATABASE_PASSWORD'] %>
